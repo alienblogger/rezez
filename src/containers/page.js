@@ -1,4 +1,4 @@
-import { h, Component } from "preact";
+import React, { Component } from "react";
 import Header from "./header.js";
 import Panels from "./panels.js";
 import Panel from "../components/panel.js";
@@ -20,7 +20,9 @@ class Page extends Component {
       }
     ]
   };
-  render({ name }, { panels }) {
+  render() {
+    let { name } = this.props;
+    let { panels } = this.state;
     let panelsList = panels.map((item, index) =>
       <Panel
         key={item.id}

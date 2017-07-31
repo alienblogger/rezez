@@ -1,8 +1,19 @@
-import { h, Component } from "preact";
-import linkState from "linkstate";
+import React, { Component } from "react";
 
 class TextBox extends Component {
-  render({ value, size, locked }, { text = value }) {
+  state = {
+    text: this.props.value
+  };
+
+  handleChange = e => {
+    var value = e.target.value;
+    this.setState({
+      text
+    });
+  };
+  render() {
+    let { locked } = this.props;
+    let { text } = this.state;
     let input = null;
     if (locked === "true") {
       input =
@@ -16,7 +27,7 @@ class TextBox extends Component {
           : <input
               className="text-box"
               value={text}
-              onInput={linkState(this, "text")}
+              onChange={this.handleChange}
             />;
     }
     return (

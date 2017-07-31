@@ -1,12 +1,22 @@
-import { h, Component } from "preact";
-import { route } from "preact-router";
-import linkState from "linkstate";
+import React, { Component } from "react";
 
 class Home extends Component {
-  handleClick = () => {
-    route("/create/" + this.state.name);
+  state = {
+    name: ""
   };
-  render({}, { name }) {
+
+  handleClick = () => {
+    this.props.route("resume", this.state.name);
+  };
+
+  handleChange = e => {
+    this.setState({
+      name: e.target.value
+    });
+  };
+
+  render() {
+    let { name } = this.state;
     return (
       <div className="home-view">
         <div className="header-image">
@@ -22,7 +32,7 @@ class Home extends Component {
           <input
             id="name"
             placeholder="Enter Your Name "
-            onInput={linkState(this, "name")}
+            onChange={this.handleChange}
           />
           <div onClick={this.handleClick} className="button">
             Create Resume

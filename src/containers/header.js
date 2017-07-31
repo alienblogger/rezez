@@ -1,8 +1,9 @@
-import { h, Component } from "preact";
+import React, { Component } from "react";
 import TextBox from "../components/text.js";
 
 class Header extends Component {
-  render({ label }, {}) {
+  render() {
+    let { label } = this.props;
     return (
       <div className="header">
         <div className="header-title">

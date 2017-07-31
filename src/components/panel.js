@@ -1,4 +1,4 @@
-import { h, Component } from "preact";
+import React, { Component } from "react";
 import TextBox from "./text.js";
 
 class Panel extends Component {
@@ -33,8 +33,11 @@ class Panel extends Component {
     });
   };
 
-  render({ title, subtitle, info, count }, { panels }) {
-    let panelList = panels.map((item, index) => {
+  render() {
+    let { panels } = this.state;
+    let { title, subtitle, info } = this.props;
+    console.log(title);
+    let panelList = this.state.panels.map((item, index) => {
       console.log(index);
       return (
         <div key={item.id} className="panel-sub">

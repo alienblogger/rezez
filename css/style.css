@@ -1,179 +1,316 @@
-@font-face {
-  font-family: "Junction";
-  src: url("../fonts/Junction-regular.otf");
-}
-
-@font-face {
-  font-family: "Junction Bold";
-  src: url("../fonts/Junction-bold.otf");
-}
-
 * {
   margin: 0;
   padding: 0;
 }
 
-input{
-  background:transparent;
-  padding:0.5em;
-  text-align: center;
-  font-size:1.2em;
-  border:none;
-  outline:none;
-  min-width: 5em;
-}
-
-input:focus{
-  border:1px solid #aaa;
-}
-
-input:hover{
-  border:1px solid #aaa;
-}
-
-.page-title{
-  margin:1em 0;
-  width:100%;
-  display:flex;
-  justify-content: center;
-}
-
-.page-title input{
-  font-size: 3em;
-  text-align: center;
-  font-family: "Open Sans";
-  font-weight: bold;
-}
-
-.page-subtitle{
-  margin: 0 auto;
-  margin-top:-3em;
-  width:100%;
-  display:flex;
-  justify-content: center;
-}
-
-.page-subtitle input{
-  font-size: 1em;
-  text-align: center;
-  font-family: "Open Sans";
-  font-weight: bold;
-}
-
-#app {
-  padding: 1em 0;
-  background: #f3f3f3;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.option-bar {
-  display: flex;
-  flex-wrap: wrap;
-  width: 6em;
-  margin: 0 1em;
+html,
+body {
   height: 100%;
-  background: #1f2124;
-  color: white;
-}
-.page {
-  background: white;
-  width: 210mm;
-  height: 297mm;
-  border: 1px solid #ccc;
+  width: 100%;
+  font-family: "Lato";
+  font-weight: bold;
+  color: #333;
 }
 
-.page-element{
-  width:100%;
-  border:1px solid black;
+input {
+  text-align: center;
+  margin: 0.1em;
+  outline: none;
+  border: 1px solid #ddd;
+  transition: .5s ease;
+  font-family: "Lato";
+  font-weight: bold;
+  color: #333;
 }
 
-.page-element-group{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: flex-start;
+input:focus {
+  outline: none;
+  border: 1px solid #333;
 }
+
+a {
+  text-decoration: none;
+  color: #a593e0;
+}
+
+a:hover {
+  text-decoration: none;
+  color: teal;
+}
+
+/* Generic Styles */
 
 .button {
-  background: #1f2124;
-  color:white;
-  width: 1em;
-  height: 1em;
+  font-family: "Lato";
+  border-radius: 0.1em;
+  color: #fffff3;
+  background: #a593e0;
+  margin: 0.5em;
+  min-height: 0.5em;
+  min-width: 0.5em;
+  padding: 0.5em 1em;
+  max-height: 5em;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1em;
-  font-family: "Junction", sans-serif;
-  transition: 0.5s ease;
+  transition: .5s ease;
 }
-
-.active-btn{
-  background: #383a3f;
-}
-
 
 .button:hover {
-  background: #383a3f;
+  background: #6c49b8;
 }
 
-
-.panel{
-  width:100%;
-  margin:2em 2em;
+.home-view {
+  height: 80vh;
 }
 
-.panel-title{
-  font-weight: bold;
-  font-size:2em;
-}
-
-.panel-list{
-  display:flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-
-.panel-info{
-  display:flex;
+.header-image {
+  background-position: center;
+  background-blend-mode: screen;
+  background-size: cover;
+  background-color: #566270;
+  background-image: url("../img/splash.jpg");
+  height: 80%;
+  display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
 }
 
-.md-input{
-  text-align: left;
-  font-size:1.1em;
-  font-weight: bold;
+.title-bar {
+  color: #566270;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.5em;
+}
+
+.cards {
+  display: flex;
+  width: 100%;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card {
+  margin: 1em;
+  margin-right: 0;
+  min-width: 5em;
+  padding: 0.5em;
+  height: 10em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-image {
+  width: 100%;
+  height: 60%;
+  margin-bottom: 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-image i {
+  color: #566270;
+  font-size: 5em;
+}
+
+.card-label {
   font-family: "Lato";
+  font-size: 2em;
+  color: #566270;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.5em;
+  height: 30%;
+}
+.resume {
+  background: #eee;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-.sm-input{
-  text-align: left;
+.text-box {
+  padding: 0.5em;
   font-size: 1em;
-  font-family: "Lato";
+  width: 20em;
 }
+
+.page {
+  height: 297mm;
+  width: 210mm;
+  background: white;
+  margin: 1em;
+  border: 1px solid #ddd;
+}
+
+.panel-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.panel {
+  width: 100%;
+  margin: 1em;
+}
+
+.panel-title .text-box {
+  text-align: center;
+  font-size: 2em;
+  padding: 0;
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #ddd !important;
+}
+
+.panel-title .button {
+  margin-left: auto;
+}
+
+.panel-body {
+  margin: 0.5em;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.panel-sub {
+  width: 45.77%;
+  margin: 1em;
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.panel-sub .editable {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+}
+
+.panel-sub input {
+  align-self: stretch;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0.25em;
+}
+
+.header-title {
+  margin: 0.5em;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-title h1 {
+  font-size: 3em;
+  font-family: "Montserrat";
+}
+
+.header-body {
+  font-family: "Lato";
+  margin: 0.5em;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header-body input {
+  text-align: center;
+}
+
+/* Specific Styles */
+
+#app-name {
+  font-family: "Montserrat";
+  font-size: 5em;
+}
+
+#name {
+  color: #566270;
+  border-radius: 0.1em;
+  margin: 0.5em;
+  width: 20em;
+  padding: 0.5em;
+  font-family: "Arial";
+  font-size: 1.5em;
+  outline: none;
+  border: none;
+}
+
+#name:focus {
+  outline: none;
+  border: none;
+}
+
+#short-desc input {
+  text-align: center;
+}
+
+/* Media Queries */
 
 @page {
   size: A4;
   margin: 0;
 }
-
 @media print {
-  .page {
-    visibility: visible;
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
-
-  input{
-    background:transparent;
-  }
-
-  .button{
-    display:none;
+  body * {
     visibility: hidden;
+  }
+
+  .button {
+    display: none;
+  }
+
+  .page,
+  .page * {
+    visibility: visible;
+  }
+
+  .page {
+    border: 0 !important;
+    margin: 0 !important;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+  }
+
+  .text-box {
+    border: 0 !important;
+  }
+
+  .text-box:focus {
+    border: 0 !important;
+  }
+
+  .text-box:disabled {
+    background: transparent;
+    border: 0 !important;
+  }
+
+  .panel-title .text-box {
+    border-bottom: 1px solid #ddd !important;
   }
 }

@@ -1,18 +1,15 @@
 module.exports = {
-  entry: "./src/app.js",
-
+  entry: "./index.js",
   output: {
-    path: __dirname + "/dist",
     filename: "bundle.js",
-    publicPath:"/dist"
+    path: __dirname + "/dist"
   },
-
   module: {
     loaders: [
       {
         test: /\.js$/,
-        exclude: /node_modules/,
-        loader: "babel-loader"
+        loader: "babel-loader",
+        exclude: __dirname + "/node_modules"
       }
     ]
   }

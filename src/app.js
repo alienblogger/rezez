@@ -1,41 +1,15 @@
-import React, { Component } from "react";
-import { render } from "react-dom";
+import { h, render } from "preact";
+import Router from "preact-router";
+import Home from "./views/home.js";
+import Resume from "./views/resume.js";
 
-import OptionBar from "./modules/option-bar.js";
-import Page from "./modules/page.js";
-
-class App extends Component {
-  constructor(){
-    super();
-    this.state={
-      pageElements:[]
-    }
-  }
-
-  addElement = (element, value) => {
-    let elems = this.state.pageElements;
-    elems.push({
-      id:this.state.pageElements.length,
-      element:element,
-      value:value
-    });
-
-    this.setState({
-      pageElements:elems
-    },()=>{
-      console.log(this.state.pageElements);
-    });
-  }
-
-
-  render() {
-    return (
-      <div id="app">
-        <OptionBar addElement={this.addElement}/>
-        <Page elements={this.state.pageElements}/>
-      </div>
-    );
-  }
+function App() {
+  return (
+    <Router>
+      <Home path="/" />
+      <Resume path="/create/:name" />
+    </Router>
+  );
 }
 
-render(<App />, document.getElementById("root"));
+render(<App />, document.getElementById("app"));

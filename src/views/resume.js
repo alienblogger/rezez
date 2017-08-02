@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Page from "../containers/page.js";
+import ActionBar from "../containers/action-bar.js";
 
 class Resume extends Component {
   render() {
@@ -8,6 +9,7 @@ class Resume extends Component {
     console.log(name);
     return (
       <div className="resume">
+        <ActionBar />
         <Page name={name} />
       </div>
     );

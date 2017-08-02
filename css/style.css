@@ -46,10 +46,7 @@ a:hover {
   color: #fffff3;
   background: #a593e0;
   margin: 0.5em;
-  min-height: 0.5em;
-  min-width: 0.5em;
-  padding: 0.5em 1em;
-  max-height: 5em;
+  padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -144,8 +141,36 @@ a:hover {
   width: 20em;
 }
 
+.action-bar {
+  margin: 1em;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.action-btn {
+  width: 2em;
+  height: 2em;
+  padding: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #333;
+  border-bottom: 1px solid white;
+  transition: .5s ease;
+}
+
+.action-btn:hover {
+  background: white;
+  color: #333;
+}
+
+.action-btn i {
+  font-size: 16px;
+}
+
 .page {
-  height: 297mm;
+  min-height: 297mm;
   width: 210mm;
   background: white;
   margin: 1em;
@@ -164,18 +189,25 @@ a:hover {
   margin: 1em;
 }
 
-.panel-title .text-box {
-  text-align: center;
-  font-size: 2em;
-  padding: 0;
-  width: 100%;
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid #ddd !important;
+.panel-title {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
-.panel-title .button {
-  margin-left: auto;
+.panel-title .input {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.panel-title .text-box {
+  font-size: 2em;
+  padding: 0;
+  background: transparent;
+  border: none;
 }
 
 .panel-body {
@@ -310,7 +342,7 @@ a:hover {
     border: 0 !important;
   }
 
-  .panel-title .text-box {
+  .panel-title {
     border-bottom: 1px solid #ddd !important;
   }
 }

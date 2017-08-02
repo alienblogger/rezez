@@ -17,6 +17,12 @@ class Page extends Component {
         title: "Strengths",
         subtitle: "What makes you worthy?",
         info: null
+      },
+      {
+        id: 3,
+        title: "Skills",
+        subtitle: "What are you good at?",
+        info: null
       }
     ]
   };

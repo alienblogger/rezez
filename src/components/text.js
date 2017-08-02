@@ -6,14 +6,15 @@ class TextBox extends Component {
   };
 
   handleChange = e => {
-    var value = e.target.value;
     this.setState({
-      text
+      text: value
     });
   };
+
   render() {
     let { locked } = this.props;
     let { text } = this.state;
+    console.log(text);
     let input = null;
     if (locked === "true") {
       input =
@@ -31,7 +32,7 @@ class TextBox extends Component {
             />;
     }
     return (
-      <div>
+      <div className="input">
         {input}
       </div>
     );
